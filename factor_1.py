@@ -48,9 +48,11 @@ rentabilidade_carteiras = rentabilidade_carteiras.drop('retorno', axis=1)
 qs.extend_pandas()
 rentabilidade_carteiras.index = pd.to_datetime(rentabilidade_carteiras.index)
 
-# rentabilidade_carteiras['modelo_acumulado'].plot_monthly_heatmap()
-# rentabilidade_carteiras['ibovespa_acumulado'].plot_monthly_heatmap()
+#rentabilidade_carteiras['modelo_acumulado'].plot_monthly_heatmap()
+#rentabilidade_carteiras['ibovespa_acumulado'].plot_monthly_heatmap()
 
 rentabilidade_carteiras.plot()
 rentabilidade_ao_ano = (
     1 + rentabilidade_carteiras.loc['2023-06-30', 'modelo_acumulado']) ** (1/7.5) - 1  # anualizar taxa
+
+print (rentabilidade_ao_ano)
